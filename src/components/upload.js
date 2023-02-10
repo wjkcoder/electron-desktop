@@ -2,17 +2,29 @@ import React, { useState } from 'react';
 import { UploadOutlined } from '@ant-design/icons';
 import { Button, Col, message, Row, Upload } from 'antd';
 import { Image } from 'antd';
-import { route } from './../config'
+// import config from '../config'
+
+const isDev = process.env.NODE_ENV === 'development';
+const host = isDev ? '/api' : 'http://localhost:5000';
+const config = {
+  "host": host,
+  "route": {
+    "save": host + "/image/save",
+    "download": host + "/files/download"
+  }
+}
 const App = () => {
   const [fileList, setFileList] = useState([]);
   const [uploading, setUploading] = useState(false);
   const [visible, setVisible] = useState(false);
   const [resImageList, setResImageList] = useState([])
+  const route = config.route
   const handleUpload = () => {
     const formData = new FormData();
     fileList.forEach((file) => {
       formData.append('file', file);
     });
+    console.log(process.env.NODE_ENV)
     setUploading(true);
     // const headers = new Headers()
     // headers.append('Access-Control-Allow-Origin','*');

@@ -7,4 +7,4 @@ const config = {
         "download":host+"/image/download"
     }
 }
-module.exports = config
+export default {config};
