@@ -77,7 +77,7 @@
     },
     "win": {
       "target": "nsis",
-      "icon":"grid.ico"
+      "icon":"application.ico"
     },
     "dmg": {
       "background": "public/appdmg.jpg",
@@ -105,9 +105,9 @@
       "oneClick": false,
       "allowElevation": true,
       "allowToChangeInstallationDirectory": true,
-      "installerIcon": "./favicon.ico",
-      "uninstallerIcon": "./favicon.ico",
-      "installerHeaderIcon": "./favicon.ico",
+      "installerIcon": "./app.ico",
+      "uninstallerIcon": "./app.ico",
+      "installerHeaderIcon": "./app.ico",
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
       "perMachine": false,
